@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         
         if let timeInterval = timeInterval {
             if abs(timeInterval) < 10 * 60 {
-                billTextField.text = "\(amount)"
+                billTextField.text = amount > 0 ? "\(amount)" : ""
             }
         }
         
