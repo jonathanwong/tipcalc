@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var percentTipLabel: UILabel!
     @IBOutlet weak var splitPeopleLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var containerStackView: UIStackView!
+    @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var billTextField: UITextField!
     
@@ -51,10 +53,6 @@ class ViewController: UIViewController {
         
         let peopleSwipe = UIPanGestureRecognizer(target: self, action: #selector(ViewController.updatePeople(_:)))
         splitPeopleLabel.addGestureRecognizer(peopleSwipe)
-        
-        UIView.animate(withDuration: 2.0, delay: 3.0, options: [], animations: {
-            self.billTextField.frame.origin.y += 100
-        }, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,12 +144,36 @@ class ViewController: UIViewController {
         }
     }
 
+    func showAllInputs(show: Bool) {
+        if show {
+            containerHeightConstraint.constant = 20.0
+        } else {
+            let offset = view.frame.height / 2.0 - billTextField.frame.height + 20.0
+            containerHeightConstraint.constant = offset
+        }
+        
+        UIView.animate(withDuration: 0.33,
+                       delay: 0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 10.0,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.view.layoutIfNeeded()
+                        },
+                       completion: nil)
+    }
 
     @IBAction func calculateTip(_ sender: Any) {
         guard percentTip != nil && splitPeople != nil else {
             return
         }
         let billTotal = Double(billTextField.text!) ?? 0
+        
+        if billTotal == 0 {
+            showAllInputs(show: false)
+        } else {
+            showAllInputs(show: true)
+        }
         
         let dollarTip = billTotal * Double(percentTip!) * 0.01
         let total = (billTotal + dollarTip) / Double(splitPeople!)

@@ -22,33 +22,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XrD-5X-hBG">
-                                <rect key="frame" x="16" y="72" width="343" height="96"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="9VE-Zf-vza"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="totalLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-xv-a4q">
-                                <rect key="frame" x="16" y="227" width="343" height="95.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2CR-dV-Dp3">
-                                <rect key="frame" x="16" y="176" width="343" height="43"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aAO-MT-Qav">
+                                <rect key="frame" x="16" y="72" width="343" height="234.5"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="percentTipLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-kf-Kjs">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XrD-5X-hBG">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="96"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="splitPeople" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAP-zI-Oq2">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="9VE-Zf-vza"/>
+                                        </connections>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2CR-dV-Dp3">
+                                        <rect key="frame" x="0.0" y="96" width="343" height="43"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="percentTipLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-kf-Kjs">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="splitPeople" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAP-zI-Oq2">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="totalLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-xv-a4q">
+                                        <rect key="frame" x="0.0" y="139" width="343" height="95.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -57,15 +62,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2CR-dV-Dp3" firstAttribute="trailing" secondItem="XrD-5X-hBG" secondAttribute="trailing" id="BHl-LX-qe4"/>
-                            <constraint firstItem="2CR-dV-Dp3" firstAttribute="top" secondItem="XrD-5X-hBG" secondAttribute="bottom" constant="8" symbolic="YES" id="IDG-O7-uXv"/>
-                            <constraint firstItem="2CR-dV-Dp3" firstAttribute="leading" secondItem="XrD-5X-hBG" secondAttribute="leading" id="PYh-CV-72P"/>
-                            <constraint firstItem="BXF-xv-a4q" firstAttribute="leading" secondItem="XrD-5X-hBG" secondAttribute="leading" id="SHB-rz-wOQ"/>
-                            <constraint firstItem="XrD-5X-hBG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="a37-H0-i1w"/>
-                            <constraint firstItem="XrD-5X-hBG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="g6y-9u-paY"/>
-                            <constraint firstItem="BXF-xv-a4q" firstAttribute="trailing" secondItem="XrD-5X-hBG" secondAttribute="trailing" id="mEl-1b-BYj"/>
-                            <constraint firstItem="XrD-5X-hBG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="q9y-Nf-70n"/>
-                            <constraint firstItem="BXF-xv-a4q" firstAttribute="top" secondItem="2CR-dV-Dp3" secondAttribute="bottom" constant="8" symbolic="YES" id="tQg-Gb-TJz"/>
+                            <constraint firstItem="aAO-MT-Qav" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NHq-vC-Zdc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aAO-MT-Qav" secondAttribute="trailing" id="gUc-X9-tZl"/>
+                            <constraint firstItem="aAO-MT-Qav" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="ott-t6-R0n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="cXM-YA-jvm">
@@ -77,6 +76,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billTextField" destination="XrD-5X-hBG" id="LMP-6F-PfQ"/>
+                        <outlet property="containerHeightConstraint" destination="ott-t6-R0n" id="MqR-xy-DFs"/>
+                        <outlet property="containerStackView" destination="aAO-MT-Qav" id="d9N-Eq-CZP"/>
                         <outlet property="percentTipLabel" destination="SSg-kf-Kjs" id="32g-JB-uqz"/>
                         <outlet property="splitPeopleLabel" destination="pAP-zI-Oq2" id="YJ7-Zm-ShX"/>
                         <outlet property="totalLabel" destination="BXF-xv-a4q" id="4mq-Uy-hZh"/>
