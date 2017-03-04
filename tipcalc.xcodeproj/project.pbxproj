@@ -14,6 +14,11 @@
 		FC0EAC3C1E668F340090E8F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC0EAC3A1E668F340090E8F3 /* LaunchScreen.storyboard */; };
 		FC0EAC471E668F340090E8F3 /* tipcalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EAC461E668F340090E8F3 /* tipcalcTests.swift */; };
 		FC0EAC521E668F340090E8F3 /* tipcalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EAC511E668F340090E8F3 /* tipcalcUITests.swift */; };
+		FC0EAC601E6697DF0090E8F3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EAC5F1E6697DF0090E8F3 /* SettingsViewController.swift */; };
+		FC0EAC661E679D350090E8F3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EAC651E679D350090E8F3 /* Settings.swift */; };
+		FC0EAC681E69394D0090E8F3 /* DefaultTipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EAC671E69394D0090E8F3 /* DefaultTipTableViewCell.swift */; };
+		FC0EAC6A1E693A770090E8F3 /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EAC691E693A770090E8F3 /* ThemeTableViewCell.swift */; };
+		FC0EAC6E1E6A279B0090E8F3 /* LocaleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0EAC6D1E6A279B0090E8F3 /* LocaleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		FC0EAC4D1E668F340090E8F3 /* tipcalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipcalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC0EAC511E668F340090E8F3 /* tipcalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipcalcUITests.swift; sourceTree = "<group>"; };
 		FC0EAC531E668F340090E8F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC0EAC5F1E6697DF0090E8F3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FC0EAC651E679D350090E8F3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FC0EAC671E69394D0090E8F3 /* DefaultTipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTipTableViewCell.swift; sourceTree = "<group>"; };
+		FC0EAC691E693A770090E8F3 /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
+		FC0EAC6D1E6A279B0090E8F3 /* LocaleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,11 @@
 				FC0EAC381E668F340090E8F3 /* Assets.xcassets */,
 				FC0EAC3A1E668F340090E8F3 /* LaunchScreen.storyboard */,
 				FC0EAC3D1E668F340090E8F3 /* Info.plist */,
+				FC0EAC5F1E6697DF0090E8F3 /* SettingsViewController.swift */,
+				FC0EAC651E679D350090E8F3 /* Settings.swift */,
+				FC0EAC671E69394D0090E8F3 /* DefaultTipTableViewCell.swift */,
+				FC0EAC691E693A770090E8F3 /* ThemeTableViewCell.swift */,
+				FC0EAC6D1E6A279B0090E8F3 /* LocaleTableViewCell.swift */,
 			);
 			path = tipcalc;
 			sourceTree = "<group>";
@@ -263,7 +278,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC0EAC341E668F340090E8F3 /* ViewController.swift in Sources */,
+				FC0EAC681E69394D0090E8F3 /* DefaultTipTableViewCell.swift in Sources */,
 				FC0EAC321E668F340090E8F3 /* AppDelegate.swift in Sources */,
+				FC0EAC6A1E693A770090E8F3 /* ThemeTableViewCell.swift in Sources */,
+				FC0EAC661E679D350090E8F3 /* Settings.swift in Sources */,
+				FC0EAC601E6697DF0090E8F3 /* SettingsViewController.swift in Sources */,
+				FC0EAC6E1E6A279B0090E8F3 /* LocaleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
