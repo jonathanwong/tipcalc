@@ -56,12 +56,12 @@ class SettingsViewController: UIViewController {
     }
     */
 
-    func handleTap(_ sender: UITapGestureRecognizer) {
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
         sender.cancelsTouchesInView = false
         view.endEditing(true)
     }
     
-    func darkThemeChanged(_ sender: UISwitch) {
+    @objc func darkThemeChanged(_ sender: UISwitch) {
         settings.setIsDarkTheme(isDark: sender.isOn)
     }
 }

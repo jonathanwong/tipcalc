@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 class ViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var billTextField: UITextField!
     
     let settings = Settings()
+    let tipLogic = TipLogic()
     
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -32,13 +34,6 @@ class ViewController: UIViewController {
             return NSLocale(localeIdentifier: settings.localeString())
         }
     }
-    
-    static let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        
-        return formatter
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,11 +89,24 @@ class ViewController: UIViewController {
             splitPeopleLabel.textColor = UIColor.yellow
             totalLabel.textColor = UIColor.green
         } else {
-            view.backgroundColor = UIColor.white
+//            view.backgroundColor = UIColor.white
             billTextField.textColor = UIColor.lightGray
             percentTipLabel.textColor = UIColor.darkGray
             splitPeopleLabel.textColor = UIColor.darkGray
             totalLabel.textColor = UIColor.black
+            
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = view.bounds
+            let bottomColor = UIColor(hue: 208 / 360, saturation: 82 / 100, brightness: 0.9, alpha: 1)
+            let topColor = UIColor(hue: 208 / 360, saturation: 41 / 100, brightness: 0.9, alpha: 1)
+            gradientLayer.colors = [bottomColor.cgColor, topColor.cgColor]
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+            
+            view.layer.insertSublayer(gradientLayer, at: 0)
+            navigationController?.navigationBar.barTintColor = topColor
+            navigationController?.navigationBar.isTranslucent = false
+            navigationController?.navigationBar.backgroundColor = UIColor.clear
         }
     }
     
@@ -114,7 +122,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateTip(_ gesture: UIPanGestureRecognizer) {
+    @objc func updateTip(_ gesture: UIPanGestureRecognizer) {
         guard percentTip != nil else {
             return
         }
@@ -129,7 +137,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updatePeople(_ gesture: UIPanGestureRecognizer) {
+    @objc func updatePeople(_ gesture: UIPanGestureRecognizer) {
         guard splitPeople != nil else {
             return
         }
@@ -175,30 +183,33 @@ class ViewController: UIViewController {
             showAllInputs(show: true)
         }
         
-        let dollarTip = billTotal * Double(percentTip!) * 0.01
-        let total = (billTotal + dollarTip) / Double(splitPeople!)
+        let total = tipLogic.calculateTip(total: billTotal, percent: Double(percentTip!), split: splitPeople!)
         
         percentTipLabel.text = String(format: "%d%%", Int(percentTip!))
         splitPeopleLabel.text = "Split: \(splitPeople!)"
-        ViewController.numberFormatter.locale = locale as Locale
-        let totalString = ViewController.numberFormatter.string(from: NSNumber(value: total))
+        TipLogic.numberFormatter.locale = locale as Locale
+        let totalString = TipLogic.numberFormatter.string(from: NSNumber(value: total))
         totalLabel.text = totalString
         
         settings.setLastUsed(date: Date(), amount: billTotal)
+        
+        
     }
     
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         adjustInsetForKeyboardShow(show: true, notification: notification)
     }
     
-    func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         adjustInsetForKeyboardShow(show: false, notification: notification)
     }
     
     func adjustInsetForKeyboardShow(show: Bool, notification: Notification) {
         let userInfo = notification.userInfo ?? [:]
         let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        let adjustmentHeight = ((keyboardFrame).height) * (show ? 1 : -1)
+        _ = ((keyboardFrame).height) * (show ? 1 : -1)
     }
+    
+    
 }
 

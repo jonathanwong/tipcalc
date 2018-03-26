@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="tipcalc_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="Dxk-tD-iEt">
+                            <items>
+                                <picker height="100" alignment="left" focusStyle="stack" id="Qvh-3z-Xzd">
+                                    <connections>
+                                        <action selector="splitPeoplePickerChanged:" destination="AgC-eL-Hgc" id="Jf8-3h-pEm"/>
+                                    </connections>
+                                </picker>
+                                <label alignment="right" text="Total" textAlignment="right" id="6S9-09-vFE"/>
+                                <group width="1" alignment="left" layout="vertical" id="htk-Hb-5uZ">
+                                    <items>
+                                        <group width="1" alignment="left" id="R1n-en-fd3">
+                                            <items>
+                                                <button width="0.33000000000000002" alignment="left" title="1" id="azh-p1-M9a">
+                                                    <connections>
+                                                        <action selector="oneButtonPressed" destination="AgC-eL-Hgc" id="ptv-ni-5bQ"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.33000000000000002" alignment="center" title="2" id="RhL-0i-q2e">
+                                                    <connections>
+                                                        <action selector="twoButtonPressed" destination="AgC-eL-Hgc" id="YCA-rf-d26"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.33000000000000002" alignment="right" title="3" id="FbR-mo-jS4">
+                                                    <connections>
+                                                        <action selector="threeButtonPressed" destination="AgC-eL-Hgc" id="qyD-Vk-MMU"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" id="f7g-rj-yjI">
+                                            <items>
+                                                <button width="0.33000000000000002" alignment="left" title="4" id="vva-aS-cHz">
+                                                    <connections>
+                                                        <action selector="fourButtonPressed" destination="AgC-eL-Hgc" id="G9A-B3-vxo"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.33000000000000002" alignment="center" title="5" id="hjY-Cr-g9j">
+                                                    <connections>
+                                                        <action selector="fiveButtonPressed" destination="AgC-eL-Hgc" id="9iE-G3-CBj"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.33000000000000002" alignment="right" title="6" id="Vuj-mM-eUf">
+                                                    <connections>
+                                                        <action selector="sixButtonPressed" destination="AgC-eL-Hgc" id="PS6-Yx-pfd"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" id="Crh-Dx-rvU">
+                                            <items>
+                                                <button width="0.33000000000000002" alignment="left" title="7" id="Bcg-y6-Nbw">
+                                                    <connections>
+                                                        <action selector="sevenButtonPressed" destination="AgC-eL-Hgc" id="2zI-yd-uJw"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.33000000000000002" alignment="center" title="8" id="aPG-Ch-5Kz">
+                                                    <connections>
+                                                        <action selector="eightButtonPressed" destination="AgC-eL-Hgc" id="PUK-ZI-box"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.33000000000000002" alignment="right" title="9" id="mpM-Om-o1X">
+                                                    <connections>
+                                                        <action selector="nineButtonPressed" destination="AgC-eL-Hgc" id="0JK-8k-ROc"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" id="Y7D-hc-jX8">
+                                            <items>
+                                                <button width="0.33000000000000002" alignment="center" title="0" id="t7c-UI-4yA">
+                                                    <connections>
+                                                        <action selector="zeroButtonPressed" destination="AgC-eL-Hgc" id="eZo-Ae-DUr"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.33000000000000002" alignment="right" title="X" id="sLp-TL-T8t">
+                                                    <connections>
+                                                        <action selector="deleteButtonPressed" destination="AgC-eL-Hgc" id="AAi-XA-fYA"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="splitPeoplePicker" destination="Qvh-3z-Xzd" id="25o-QP-xO0"/>
+                        <outlet property="totalLabel" destination="6S9-09-vFE" id="WCK-Jm-aw0"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="tipcalc_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

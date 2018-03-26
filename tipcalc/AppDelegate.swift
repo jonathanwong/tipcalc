@@ -13,9 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var settings = Settings()
+    let watchLogic = WatchLogic()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        watchLogic.setupWatchConnectivity()
+        
         return true
     }
 
@@ -43,4 +45,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 }
-
